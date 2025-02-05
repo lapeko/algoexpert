@@ -12,19 +12,18 @@ def minimumAreaRectangle(points):
         if len(table[k]) < 2:
             del table[k]
 
-    xS = list(table.keys())
-    for idx1 in range(len(xS) - 1):
-        x1 = xS[idx1]
-        for idx2 in range(idx1 + 1, len(xS)):
-            x2 = xS[idx2] 
-            width = x2 - x1
-            area = abs(width * getMinimalheight(table[x1], table[x2]))
-            if area == 0:
-                continue
-            if min == 0:
-                min = area
-            if area < min:
-                min = area    
+    xS = sorted(list(table.keys()))
+    for idx in range(len(xS) - 1):
+        x1 = xS[idx]
+        x2 = xS[idx + 1]
+        width = x2 - x1
+        area = abs(width * getMinimalheight(table[x1], table[x2]))
+        if area == 0:
+            continue
+        if min == 0:
+            min = area
+        if area < min:
+            min = area        
     return min
 
 def getMinimalheight(set1, set2):
