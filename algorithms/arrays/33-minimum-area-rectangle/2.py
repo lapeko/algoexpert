@@ -2,7 +2,7 @@
 # SC O(N)
 
 def minimumAreaRectangle(points):
-    min, table = 0, {}
+    minArea, table = 0, {}
     for p in points:
         if p[0] not in table:
             table[p[0]] = set()
@@ -17,31 +17,31 @@ def minimumAreaRectangle(points):
         x1 = xS[idx]
         x2 = xS[idx + 1]
         width = x2 - x1
-        area = abs(width * getMinimalheight(table[x1], table[x2]))
+        area = abs(width * getMinimalHeight(table[x1], table[x2]))
         if area == 0:
             continue
-        if min == 0:
-            min = area
-        if area < min:
-            min = area        
-    return min
+        if minArea == 0:
+            minArea = area
+        if area < minArea:
+            minArea = area        
+    return minArea
 
-def getMinimalheight(set1, set2):
-    min = 0
+def getMinimalHeight(set1, set2):
+    minHeight = 0
     intersections = sorted(set1 & set2)
     
     if len(intersections) < 2:
-        return min
+        return minHeight
 
     for i in range(1, len(intersections)):
         height = intersections[i - 1] - intersections[i]
         if height == 0:
             continue
-        if min == 0:
-            min = height
-        if height < min:
-            min = height
-    return min
+        if minHeight == 0:
+            minHeight = height
+        if height < minHeight:
+            minHeight = height
+    return minHeight
 
 
 
