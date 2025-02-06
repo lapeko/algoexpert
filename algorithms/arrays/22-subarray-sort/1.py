@@ -1,25 +1,15 @@
 def subarraySort(array):
     startIdx, endIdx = -1, -1
-    smallestOutOfOrder = float("inf")
-    largestOutOfOrder = float("-inf")
+    smallestOutOfOrder, largestOutOfOrder = float("inf"), float("-inf")
     for idx in range(1, len(array)):
-        if array[idx - 1] > array[idx] and smallestOutOfOrder > array[idx]:
-            smallestOutOfOrder = array[idx]
-    
-    for idx in range(len(array) - 1, 0, -1):
-        if array[idx - 1] > array[idx] and largestOutOfOrder < array[idx - 1]:
-            largestOutOfOrder = array[idx - 1]
-    
-    for idx, num in enumerate(array):
-        if num > smallestOutOfOrder:
+        if array[idx - 1] > array[idx]:
+            smallestOutOfOrder = min(smallestOutOfOrder, array[idx])
+            largestOutOfOrder = max(largestOutOfOrder, array[idx - 1])
+    for idx in range(len(array)):
+        if startIdx == -1 and array[idx] > smallestOutOfOrder:
             startIdx = idx
-            break
-    
-    for idx in range(len(array) - 1, -1, -1):
         if array[idx] < largestOutOfOrder:
             endIdx = idx
-            break
-
     return [startIdx, endIdx]
 
 tests = [{
