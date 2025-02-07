@@ -1,17 +1,11 @@
 def isMonotonic(array):
-    decrease = False
+    notDecrease, notIncrease = True, True
     for i in range(len(array) - 1):
-        if array[i] > array[i + 1]:
-            decrease = True
-        if array[i] != array[i + 1]:
-            break
-    for i in range(len(array) - 1):
-        leftIdx, rightIdx = i, i + 1
-        if decrease:
-            leftIdx, rightIdx = rightIdx, leftIdx
-        if array[leftIdx] > array[rightIdx]:
-            return False
-    return True
+        if array[i] < array[i + 1]:
+            notDecrease = False
+        elif array[i] > array[i + 1]:
+            notIncrease = False
+    return notIncrease or notDecrease
 
 
 tests = [
