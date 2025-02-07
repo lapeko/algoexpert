@@ -1,38 +1,21 @@
 def longestSubarrayWithSum(array, targetSum):
-    leftPtr, rightPtr = 0, 0
-    
+    sum, leftPtr, rightPtr = 0, 0, 0
     size = len(array)
-    sum = array[0]
     subArrayIndexes = []
 
     while rightPtr < size:
-        if sum < targetSum:
-            rightPtr += 1
-            if rightPtr < size:
-                sum += array[rightPtr]
-            continue
+        sum += array[rightPtr]
         
-        if sum > targetSum:
-            if leftPtr == rightPtr:
-                leftPtr += 1
-                rightPtr += 1
-                if rightPtr < size:
-                    sum = array[leftPtr]
-            else:
-                sum -= array[leftPtr]
-                leftPtr += 1
-            continue
+        while sum > targetSum and leftPtr < rightPtr:
+            sum -= array[leftPtr]
+            leftPtr += 1
 
-        keptIdxDiff = -1 if len(subArrayIndexes) < 2 else subArrayIndexes[1] - subArrayIndexes[0]
-        if keptIdxDiff < rightPtr - leftPtr:
-            subArrayIndexes = [leftPtr, rightPtr]
-
+        if targetSum == sum:
+            if len(subArrayIndexes) == 0 or subArrayIndexes[1] - subArrayIndexes[0] < rightPtr - leftPtr:
+                subArrayIndexes = [leftPtr, rightPtr]
+        
         rightPtr += 1
-        if rightPtr < size:
-            sum += array[rightPtr]
-
     return subArrayIndexes
-
 
 
 tests = [
