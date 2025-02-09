@@ -3,19 +3,42 @@
 # two numbers missed in the list
 
 # TC O(N)
-# SC O(N)
+# SC O(1)
+
+from math import sqrt
 
 def missingNumbers(nums):
-    result = []
     wholeLength = len(nums) + 2
+    wholeSum = int((1 + wholeLength) * wholeLength / 2)
+    wholeSquaredSum = sum(i * i for i in range(1, wholeLength + 1))
+    missedSum = wholeSum
+    missedSquaredSum = wholeSquaredSum
 
-    numSet = set(nums)
+    for num in nums:
+        missedSum -= num
+        missedSquaredSum -= num ** 2
 
-    for num in range(1, wholeLength + 1):
-        if num not in numSet:
-            result.append(num)
+    # missedSum = x + y
+    # x = missedSum - y
+    # missedSquaredSum = x^2 + y^2
+    # missedSquaredSum = (missedSum - y)^2 + y^2
+    # missedSquaredSum = missedSum^2 - 2*missedSum*y + y^2 + y^2
+    # 2*y^2 - 2*missedSum*y + missedSum^2 - missedSquaredSum
 
-    return result
+    # D = b^2 - 4*a*c
+    # x1, x2 = -b +- sqrt(D) / 2a
+
+    # D = (2*missedSum)^2 - 8 * (missedSum^2 - missedSquaredSum)
+    # D = 4*missedSum^2 - 8*missedSum^2 + 8*missedSquaredSum
+    # D = 8*missedSquaredSum - 4*missedSum^2
+    # x1 = (2*missedSum - sqrt(8*missedSquaredSum - 4*missedSum^2)) / 4
+    # x2 = (2*missedSum + sqrt(8*missedSquaredSum - 4*missedSum^2)) / 4
+
+    D = 8 * missedSquaredSum - 4 * missedSum ** 2
+    x1 = int((2 * missedSum - sqrt(D)) / 4)
+    x2 = int((2 * missedSum + sqrt(D)) / 4)
+
+    return [x1, x2]
 
 
 tests = [
