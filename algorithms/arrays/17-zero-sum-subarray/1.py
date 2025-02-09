@@ -1,10 +1,12 @@
-# TC O(N^3)
+# TC O(N^2)
 # SC O(1)
 
 def zeroSumSubarray(nums):
     for i in range(len(nums)):
+        sum = 0
         for j in range(i, len(nums)):
-            if sum(nums[i] for i in range(i, j + 1)) == 0:
+            sum += nums[j]
+            if sum == 0:
                 return True
     return False
 
