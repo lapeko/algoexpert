@@ -1,0 +1,29 @@
+1. Frequency of first letters (easy)
+    words = ["apple", "banana", "avocado", "blueberry", "apricot"]
+
+    {'a': 3, 'b': 2}
+
+2. Group by string length (medium)
+    ["hi", "hello", "hey", "yo", "sup"]
+
+    {
+        2: ["hi", "yo"],
+        3: ["hey", "sup"],
+        5: ["hello"]
+    }
+
+3. Inverted index of words → doc ids (medium+)
+    docs = [
+        ["python", "is", "cool"],
+        ["java", "is", "verbose"],
+        ["python", "is", "popular"]
+    ]
+
+    {
+        "python": {0, 2},
+        "is": {0, 1, 2},
+        "cool": {0},
+        "java": {1},
+        "verbose": {1},
+        "popular": {2}
+    }
