@@ -1,0 +1,25 @@
+2. Can you build target from source letters? (easy)
+    source = "aabbcc"
+    target = "abc"
+
+    True
+
+    source = "aabbcc"
+    target = "aabccc"
+
+    False
+
+3. Difference of two lists with counts (medium)
+    a = [1,2,2,3]
+    b = [2]
+
+    [1,2,3]
+
+4. Group anagrams using Counter (medium+)
+    ["eat", "tea", "tan", "ate", "nat", "bat"]
+
+    [
+        ["eat", "tea", "ate"],
+        ["tan", "nat"],
+        ["bat"]
+    ]
