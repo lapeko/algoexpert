@@ -14,35 +14,27 @@ from collections import deque
 #
 #     return result
 
-def rebuild_deque(que, nums, idx, k):
-    while que:
-        smallest_kept_idx = que.pop()
-        if smallest_kept_idx < idx - k:
-            continue
-        if nums[smallest_kept_idx] > nums[idx]:
-            que.append(smallest_kept_idx)
-            que.append(idx)
-            break
-    if not que:
-        que.append(idx)
-
-def get_deque_max_idx(que):
-    max_idx = que.popleft()
-    que.appendleft(max_idx)
-    return max_idx
 
 def get_max_item_in_window(nums, k):
     if not 1 <= k <= len(nums):
         raise ValueError("Window size k should be between 1 and len(nums) [1, len(nums)]")
+
     result = []
     que = deque()
-    for idx in range(len(nums)):
-        rebuild_deque(que, nums, idx, k)
-        if idx < k - 1:
-            continue
-        result.append(nums[get_deque_max_idx(que)])
-    return result
 
+    for idx in range(len(nums)):
+        while que:
+            if que[0] <= idx - k:
+                que.popleft()
+            elif nums[que[-1]] <= nums[idx]:
+                que.pop()
+            else:
+                break
+        que.append(idx)
+        if idx >= k - 1:
+            result.append(nums[que[0]])
+
+    return result
 
 
 def run_tests():
