@@ -1,0 +1,38 @@
+✅ 1. Easy — Sum of 2D points
+    📋 Define a Point namedtuple with x and y fields.
+    Given a list of points, return the total x and y sum as a new point.
+    points = [Point(1, 2), Point(3, 4), Point(5, 6)]
+    → Point(x=9, y=12)
+
+✅ 2. Easy — Convert list of tuples to namedtuples
+    📋 You have a list of tuples like [(name, age), ...].
+    Convert them to a list of Person namedtuples with fields name, age.
+    data = [("Alice", 30), ("Bob", 25)]
+    → [Person(name="Alice", age=30), Person(name="Bob", age=25)]
+
+🟡 3. Medium — Find oldest employee
+    📋 Define an Employee namedtuple with name, age, salary.
+    Given a list of employees, return the one with the highest age.
+    [
+        Employee("Alice", 30, 100000),
+        Employee("Bob", 40, 95000),
+        Employee("Charlie", 35, 120000)
+    ]
+    → Employee("Bob", 40, 95000)
+
+🟡 4. Medium — Sort products by price then name
+    📋 Define a Product namedtuple with name and price.
+    Given a list of products, return them sorted by price ascending.
+    If prices are equal, sort by name alphabetically.
+    [
+        Product("Apple", 5),
+        Product("Banana", 3),
+        Product("Avocado", 5),
+        Product("Dates", 2)
+    ]
+    → [
+        Product("Dates", 2),
+        Product("Banana", 3),
+        Product("Apple", 5),
+        Product("Avocado", 5)
+    ]
