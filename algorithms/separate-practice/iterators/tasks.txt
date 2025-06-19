@@ -1,0 +1,79 @@
+🔥 max, min, sorted, heapq — Drill Set
+
+🔹 1. Most frequent word in a list (easy)
+You’re given a list of strings. Return the most frequent word.
+["apple", "banana", "apple", "orange", "banana", "apple"]
+→ "apple"
+
+🔹 2. Longest string in a list (easy)
+Given a list of strings, return the longest one.
+["dog", "hippopotamus", "cat", "lion"]
+→ "hippopotamus"
+
+🔹 3. Smallest string alphabetically (easy)
+Return the smallest string in terms of lexicographical order.
+["dog", "cat", "apple", "banana"]
+→ "apple"
+
+🔹 4. Most common character in a string (easy)
+Return the character that appears most frequently in the string.
+"mississippi"
+→ "i"
+
+🔹 5. Sort list of strings by their length (easy)
+Sort the list of strings by increasing length.
+["dog", "hippo", "ant", "elephant"]
+→ ["ant", "dog", "hippo", "elephant"]
+
+🔹 6. Sort list of tuples by second value (medium)
+Given a list of tuples like (name, score), sort them by score descending.
+[("Alice", 80), ("Bob", 95), ("Charlie", 85)]
+→ [("Bob", 95), ("Charlie", 85), ("Alice", 80)]
+
+🔹 7. Return student with highest average score (medium)
+Given a list of students, where each student is a tuple of name and list of scores, return the student with the highest average score.
+[
+  ("Alice", [80, 90, 70]),
+  ("Bob", [100, 50]),
+  ("Charlie", [90, 90, 90])
+]
+→ "Charlie"
+
+🔹 8. Top 3 most common elements (medium)
+Given a list of values, return the 3 most common values (not counts).
+["a", "b", "a", "c", "b", "a", "b", "d", "b", "c"]
+→ ["b", "a", "c"]
+
+🔹 9. Sort dict keys by value (medium)
+Given a dict {word: frequency}, return a list of words sorted by frequency descending.
+{"apple": 3, "banana": 5, "orange": 2}
+→ ["banana", "apple", "orange"]
+
+🔹 10. Get item with max value in nested dict (medium+)
+Given a dict like {name: {score_type: score}}, find the name with highest "math" score.
+{
+  "Alice": {"math": 80, "english": 90},
+  "Bob": {"math": 95, "english": 85},
+  "Charlie": {"math": 70, "english": 100}
+}
+→ "Bob"
+
+🔹 11. Sort points by distance from origin (medium)
+Given list of points (x, y), sort them by distance to origin (0,0) ascending.
+[(1,2), (3,4), (0,0), (-1,-1)]
+→ [(0,0), (-1,-1), (1,2), (3,4)]
+
+🔹 12. Top 2 longest words, alphabetically if tie (medium+)
+Given a list of strings, return top 2 longest. If tie, break by lexicographic order.
+["cat", "zebra", "apple", "banana", "aardvark"]
+→ ["aardvark", "banana"]
+
+🔹 13. Most valuable word (hardish)
+Given a dict char_scores = {"a": 1, "b": 3, "c": 5, ...} and a list of words, return the word with the highest total score.
+words = ["abc", "bca", "aaa"]
+→ depends on scores, but e.g. "bca" if 'c' is heavy
+
+🔹 14. Sort words by number of vowels (hard)
+Given a list of words, sort them by how many vowels they contain (descending).
+["hello", "world", "aerie", "boot"]
+→ ["aerie", "hello", "boot", "world"]
