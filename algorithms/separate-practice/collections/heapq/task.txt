@@ -1,0 +1,20 @@
+✅ 1. Easy — Find smallest element
+    📋 Given a list of numbers, return the smallest one using heapq.
+    [10, 4, 2, 8]
+    → 2
+
+✅ 2. Easy — Get top 3 smallest elements
+    📋 Return the 3 smallest elements in ascending order using heapq.
+    [10, 4, 2, 8, 15, 1]
+    → [1, 2, 4]
+
+🟡 3. Medium — Merge multiple sorted lists
+    📋 Given multiple sorted lists, merge them into a single sorted list using heapq.merge.
+    [[1, 4, 7], [2, 5, 8], [0, 6, 9]]
+    → [0, 1, 2, 4, 5, 6, 7, 8, 9]
+
+🟡 4. Medium — Find K largest unique numbers
+    📋 Given a list of numbers, return the top k largest unique values using heapq.
+    nums = [4, 1, 7, 1, 2, 9, 7, 3]
+    k = 3
+    → [9, 7, 4]

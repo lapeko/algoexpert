@@ -1,0 +1,9 @@
+✅ Easy — Product of all numbers
+    📋 Given a list of integers, return the product of all numbers using reduce.
+    [2, 3, 4]
+    → 24
+
+🟡 Medium — Longest string in list
+    📋 Given a list of strings, return the longest one using reduce.
+    ["cat", "elephant", "dog", "hippopotamus"]
+    → "hippopotamus"

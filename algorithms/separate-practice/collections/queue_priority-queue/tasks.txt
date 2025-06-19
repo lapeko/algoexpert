@@ -1,0 +1,31 @@
+✅ 1. Easy — Insert and get smallest
+    📋 Push several integers into a PriorityQueue, then return the smallest one.
+    [5, 1, 3]
+    → 1
+
+✅ 2. Easy — Process tasks by priority
+    📋 Each task is a tuple (priority, name). Push them into a PriorityQueue.
+    Pop all tasks in correct order (lowest priority number = higher priority).
+    [(2, "sleep"), (1, "eat"), (3, "code")]
+    → ["eat", "sleep", "code"]
+
+🟡 3. Medium — Schedule jobs by priority
+    📋 You have a list of jobs. Each job is a namedtuple Job(priority, id, duration).
+    Push them into a PriorityQueue and return the order in which they will be processed.
+    [
+      Job(3, "job3", 5),
+      Job(1, "job1", 2),
+      Job(2, "job2", 4)
+    ]
+    → ["job1", "job2", "job3"]
+
+🟡 4. Medium — PriorityQueue with same priority
+    📋 You have tasks with the same priority, but different timestamps.
+    Tasks should be returned in the order they were added, if priority is the same.
+    tasks = [
+      (1, 100, "task1"),
+      (1, 101, "task2"),
+      (2, 90, "task3")
+    ]
+    → ["task1", "task2", "task3"]
+    💡 Use tuple (priority, timestamp, task) to enforce secondary ordering.
