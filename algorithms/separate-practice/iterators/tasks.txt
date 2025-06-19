@@ -1,10 +1,5 @@
 🔥 max, min, sorted, heapq — Drill Set
 
-🔹 1. Most frequent word in a list (easy)
-You’re given a list of strings. Return the most frequent word.
-["apple", "banana", "apple", "orange", "banana", "apple"]
-→ "apple"
-
 🔹 2. Longest string in a list (easy)
 Given a list of strings, return the longest one.
 ["dog", "hippopotamus", "cat", "lion"]
