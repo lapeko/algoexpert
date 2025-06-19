@@ -1,9 +1,0 @@
-✅ Easy — Keep positive numbers only
-    📋 Given a list of numbers, return a list of only positive numbers.
-    [-3, 0, 2, -5, 4]
-    → [2, 4]
-
-🟡 Medium — Filter words starting with vowel
-    📋 Given a list of words, return only those that start with a vowel.
-    ["apple", "banana", "orange", "grape"]
-    → ["apple", "orange"]
