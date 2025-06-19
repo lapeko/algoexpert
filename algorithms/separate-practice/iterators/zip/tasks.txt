@@ -1,8 +1,3 @@
-✅ 1. Easy — Combine names and ages
-    📋 Given two lists, one of names and one of ages, return a list of strings like "Alice is 30".
-    ["Alice", "Bob"], [30, 25]
-    → ["Alice is 30", "Bob is 25"]
-
 🟡 2. Medium — Transpose a matrix
     📋 Given a 2D list (matrix), return its transpose using zip().
     [

@@ -1,3 +1,8 @@
+# 1. Most frequent item in list (easy)
+#     ["a", "b", "a", "c", "b", "a"]
+#
+#     "a"
+
 from collections import Counter
 
 def get_most_common(chars):
