@@ -25,15 +25,6 @@ Given a list of tuples like (name, score), sort them by score descending.
 [("Alice", 80), ("Bob", 95), ("Charlie", 85)]
 → [("Bob", 95), ("Charlie", 85), ("Alice", 80)]
 
-🔹 7. Return student with highest average score (medium)
-Given a list of students, where each student is a tuple of name and list of scores, return the student with the highest average score.
-[
-  ("Alice", [80, 90, 70]),
-  ("Bob", [100, 50]),
-  ("Charlie", [90, 90, 90])
-]
-→ "Charlie"
-
 🔹 8. Top 3 most common elements (medium)
 Given a list of values, return the 3 most common values (not counts).
 ["a", "b", "a", "c", "b", "a", "b", "d", "b", "c"]
@@ -57,16 +48,6 @@ Given a dict like {name: {score_type: score}}, find the name with highest "math"
 Given list of points (x, y), sort them by distance to origin (0,0) ascending.
 [(1,2), (3,4), (0,0), (-1,-1)]
 → [(0,0), (-1,-1), (1,2), (3,4)]
-
-🔹 12. Top 2 longest words, alphabetically if tie (medium+)
-Given a list of strings, return top 2 longest. If tie, break by lexicographic order.
-["cat", "zebra", "apple", "banana", "aardvark"]
-→ ["aardvark", "banana"]
-
-🔹 13. Most valuable word (hardish)
-Given a dict char_scores = {"a": 1, "b": 3, "c": 5, ...} and a list of words, return the word with the highest total score.
-words = ["abc", "bca", "aaa"]
-→ depends on scores, but e.g. "bca" if 'c' is heavy
 
 🔹 14. Sort words by number of vowels (hard)
 Given a list of words, sort them by how many vowels they contain (descending).
