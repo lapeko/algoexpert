@@ -13,8 +13,12 @@ class DoublyLinkedList:
         self.tail = None
 
     def setHead(self, node):
-        # Write your code here.
-        pass
+        if not self.head:
+            self.head = self.tail = node
+        else:
+            self.head.prev = node
+            node.next = self.head
+            self.head = node
 
     def setTail(self, node):
         # Write your code here.
@@ -45,82 +49,27 @@ class DoublyLinkedList:
         pass
 
 
+def print_dll_forward(dll):
+    head, values = dll.head, []
+    while head:
+        values.append(str(head.value))
+        head = head.next
+    print(" <-> ".join(values), " [from head]")
 
-def print_list(dll, label=""):
-    current = dll.head
-    out = []
-    while current:
-        out.append(current.value)
-        current = current.next
-    print(f"{label} -> {'->'.join(map(str, out)) if out else 'EMPTY'}")
+def print_dll_back(dll):
+    tail, values = dll.tail, []
+    while tail:
+        values.append(str(tail.value))
+        tail = tail.prev
+    print(" <-> ".join(reversed(values)), " [from tail]")
 
-
-dll = DoublyLinkedList()
-
-print("\n=== REMOVE HEAD ===")
-n1 = Node(1)
-dll.setHead(n1)
-dll.removeNodesWithValue(1)
-print_list(dll, "Expected: EMPTY")
-
-dll = DoublyLinkedList()
-print("\n=== REMOVE TAIL ===")
-n1 = Node(1)
-n2 = Node(2)
-dll.setHead(n1)
-dll.setTail(n2)
-dll.removeNodesWithValue(2)
-print_list(dll, "Expected: 1")
+def print_dll(dll):
+    print_dll_forward(dll)
+    print_dll_back(dll)
 
 dll = DoublyLinkedList()
-print("\n=== REMOVE ONLY NODE ===")
-n1 = Node(1)
-dll.setHead(n1)
-dll.removeNodesWithValue(1)
-print_list(dll, "Expected: EMPTY")
-
-dll = DoublyLinkedList()
-print("\n=== REMOVE CONSECUTIVE VALUES ===")
-n1 = Node(1)
-n2 = Node(2)
-n3 = Node(2)
-n4 = Node(2)
-n5 = Node(3)
-dll.setHead(n1)
-dll.setTail(n5)
-dll.insertAfter(n1, n2)
-dll.insertAfter(n2, n3)
-dll.insertAfter(n3, n4)
-print_list(dll, "Before remove")
-dll.removeNodesWithValue(2)
-print_list(dll, "Expected: 1->3")
-
-dll = DoublyLinkedList()
-print("\n=== REMOVE HEAD+TAIL ===")
-n1 = Node(5)
-n2 = Node(2)
-n3 = Node(3)
-n4 = Node(5)
-dll.setHead(n1)
-dll.setTail(n4)
-dll.insertAfter(n1, n2)
-dll.insertAfter(n2, n3)
-print_list(dll, "Before remove")
-dll.removeNodesWithValue(5)
-print_list(dll, "Expected: 2->3")
-
-dll = DoublyLinkedList()
-print("\n=== REMOVE MULTIPLE MIDDLE ===")
-n1 = Node(0)
-n2 = Node(2)
-n3 = Node(2)
-n4 = Node(2)
-n5 = Node(9)
-dll.setHead(n1)
-dll.setTail(n5)
-dll.insertAfter(n1, n2)
-dll.insertAfter(n2, n3)
-dll.insertAfter(n3, n4)
-print_list(dll, "Before remove")
-dll.removeNodesWithValue(2)
-print_list(dll, "Expected: 0->9")
+dll.setHead(Node(1))
+print_dll(dll)
+dll.setHead(Node(2))
+dll.setHead(Node(3))
+print_dll(dll)
