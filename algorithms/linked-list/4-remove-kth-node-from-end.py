@@ -6,20 +6,34 @@ class LinkedList:
 
 
 # Two pass solution. O(N) time, O(1) Space
-def removeKthNodeFromEnd(head, k):
-    current, size = head, 0
-    while current:
-        size += 1
-        current = current.next
-    current, position = head, size - k
-    if position == 0:
-        head.value = head.next.value
-        head.next = head.next.next
-    else:
-        for _ in range(position - 1):
-            current = current.next
-        current.next = current.next.next
+# def removeKthNodeFromEnd(head, k):
+#     current, size = head, 0
+#     while current:
+#         size += 1
+#         current = current.next
+#     current, position = head, size - k
+#     if position == 0:
+#         head.value = head.next.value
+#         head.next = head.next.next
+#     else:
+#         for _ in range(position - 1):
+#             current = current.next
+#         current.next = current.next.next
 
+# One pass solution. O(N) time, O(1) Space
+def removeKthNodeFromEnd(head, k):
+    slow_prev, slow, fast = None, head, head
+    for _ in range(k):
+        fast = fast.next
+    while fast:
+        slow_prev = slow
+        slow = slow.next
+        fast = fast.next
+    if slow_prev is None:
+        slow.value = slow.next.value
+        slow.next = slow.next.next
+    else:
+        slow_prev.next = slow.next
 
 
 def run_tests():
